@@ -9,7 +9,7 @@ const store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>
-    <ChatContainer /> 
+    <ChatContainer />   
   </Provider>,
   document.getElementById('chat-container')
 )
