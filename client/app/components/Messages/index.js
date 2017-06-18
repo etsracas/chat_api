@@ -8,7 +8,7 @@ const Messages = ({ name, updateName }) => (
     <hr />
     <form >
       <label htmlFor="name">
-        Say hello to:
+        say hello to:
       </label>
       <input
         id="name"
