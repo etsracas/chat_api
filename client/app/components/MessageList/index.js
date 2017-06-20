@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react'
 import Message from '../Message'
 
 const MessageList = ({ messages }) => {
-  const text = messages
-
+  const test = messages
+  console.log(test)
   return (
     <div>
-      {messages.map((message) => <Messages key={message.id} text={message.text} />)}
+      {messages.map((message) => <Message key={message.id} text={message.text} />)}
     </div>
   )
 }
