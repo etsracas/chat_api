@@ -13,10 +13,7 @@ class App extends Component {
   render() {
     const { chat, actions } = this.props
     return (
-      <MessageList messages={[
-        {"id":1, "text":"てすと１"},
-        {"id":2, "text":"てすと２"}
-      ]} />
+      <MessageList messages={chat.messages} />
     )
   }
 }
