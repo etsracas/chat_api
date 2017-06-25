@@ -15,8 +15,8 @@ class MessageForm extends Component {
   }
 
   render() {
-    const { message } = this.props
-    const cancelButton = message ? <input type='button' value='キャンセル' /> : null
+    const { message, onClick } = this.props
+    const cancelButton = message ? <input type='button' value='キャンセル' onClick={onClick}/> : null
     return (
       <div>
         <textarea rows="4" cols="40" ref={(input) => {this.textMessage = input}} defaultValue={message ? message.text : ''} />
