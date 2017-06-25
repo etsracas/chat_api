@@ -6,9 +6,14 @@ export const chatInitialState = [{"id":2,"text":"message2"},{"id":1,"text":"mess
 const chat = (state = '', action) => {
   switch (action.type) {
     case ADD_MESSAGE:
-      return [...state, action.message]
+      const message = action.message
+      message['displayState'] = true
+      return [...state, message]
     case CREATE_MESSAGE_LIST:
-      return action.messages
+      return action.messages.map((message) => {
+        message['displayState'] = true
+        return message
+      })
     default:
       return state
   }
