@@ -1,5 +1,11 @@
 import { combineReducers } from 'redux'
-import { ADD_MESSAGE, CREATE_MESSAGE_LIST, CHANGE_DISPLAY_STATE, UPDATE_MESSAGE} from '../constants/chat'
+import {
+  ADD_MESSAGE,
+  CREATE_MESSAGE_LIST,
+  CHANGE_DISPLAY_STATE,
+  UPDATE_MESSAGE,
+  DELETE_MESSAGE
+} from '../constants/chat'
 
  export const chatInitialState = []
 
@@ -33,6 +39,8 @@ const chat = (state = '', action) => {
       return state.map((message) => toggleMessage(action.id, message))
     case UPDATE_MESSAGE:
       return state.map((message) => changeMessage(action.message, message))
+    case DELETE_MESSAGE:
+      return state.filter((message) => message.id != action.id)
     default:
       return state
   }
