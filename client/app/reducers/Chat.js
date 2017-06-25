@@ -10,11 +10,12 @@ const toggleMessage = (id, message) => {
   return message
 }
 
-const changeMessage = (id, text, message) => {
-  if(id == message.id) {
-    message.text = text
+const changeMessage = (newMessage, oldMessage) => {
+  if(newMessage.id == oldMessage.id) {
+    newMessage['displayState'] = true
+    return newMessage
   }
-  return message
+  return oldMessage
 }
 
 const chat = (state = '', action) => {
@@ -31,7 +32,7 @@ const chat = (state = '', action) => {
     case CHANGE_DISPLAY_STATE:
       return state.map((message) => toggleMessage(action.id, message))
     case UPDATE_MESSAGE:
-      return state.map((message) => changeMessage(action.id, action.text, message))
+      return state.map((message) => changeMessage(action.message, message))
     default:
       return state
   }

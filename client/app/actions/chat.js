@@ -1,4 +1,4 @@
-import { ADD_MESSAGE, CREATE_MESSAGE_LIST, CHANGE_DISPLAY_STATE } from '../constants/chat'
+import { ADD_MESSAGE, CREATE_MESSAGE_LIST, CHANGE_DISPLAY_STATE, UPDATE_MESSAGE } from '../constants/chat'
 
 export const addMessage = (message) => ({
   type: ADD_MESSAGE,
@@ -13,4 +13,9 @@ export const createMessageList = (messages) => ({
 export const changeDisplayState = (id) => ({
   type: CHANGE_DISPLAY_STATE,
   id,
+})
+
+export const updateMessage = (message) => ({
+  type: UPDATE_MESSAGE,
+  message,
 })
