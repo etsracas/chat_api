@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { ADD_MESSAGE, CREATE_MESSAGE_LIST, CHANGE_DISPLAY_STATE} from '../constants/chat'
 
-export const chatInitialState = [{"id":2,"text":"message2"},{"id":1,"text":"message1"}]
+ export const chatInitialState = []
 
 const toggleMessage = (id, message) => {
   if(id == message.id) {
