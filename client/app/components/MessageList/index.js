@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
+import React, { PropTypes, Component } from 'react'
+import $ from 'jquery'
 import Message from '../Message'
 
 class MessageList extends Component {
   componentDidMount(){
     const { actions } = this.props
-    actions.createMessageList(
-      [{"id":3,"text":"message3"},{"id":2,"text":"message2"},{"id":1,"text":"message1"}]
-    )
+    $.ajax({
+      type: 'GET',
+      url: '/api/messages',
+      success: ((data) => actions.createMessageList(data))
+    })
   }
 
   render(){

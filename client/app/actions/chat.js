@@ -9,4 +9,3 @@ export const createMessageList = (messages) => ({
   type: CREATE_MESSAGE_LIST,
   messages,
 })
-
